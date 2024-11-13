@@ -1,1 +1,12 @@
-<h1>Hello this is a test</h1>
+
+<div class="container">
+  <h1>Restaurants</h1>
+<ul>
+<% @restaurants.each do |restaurant| %>
+<li class = "mb-3"><%= link_to restaurant.name, restaurant_path(restaurant) %>,
+<%= restaurant.address %>,
+<%= restaurant.category.capitalize %>
+</li>
+<% end %>
+</ul>
+</div>

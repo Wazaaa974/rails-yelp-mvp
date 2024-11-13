@@ -1,1 +1,15 @@
-<h1>This is the page to see a specific restaurant</h1>
+<h1>Details</h1>
+<div>
+<h3>Non du restaurant :<%=@restaurant.name%></h3>
+<h4>Adresse :<%=@restaurant.address%></h4>
+<h4>Numero de telephone :<%=@restaurant.phone_number%></h4>
+<h4>Type : <%=@restaurant.category.capitalize%></h4>
+</div>
+
+<h3> <%@restaurant.reviews.each do |review|%></h3>
+<h3><%= review.rating %></h3>
+<%end %>
+
+
+<div><%=link_to "Home", restaurants_path%></div>
+<div><%=link_to "Add a review", new_reviews_path(@restaurant)%></div>
